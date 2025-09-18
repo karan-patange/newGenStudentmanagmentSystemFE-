@@ -1,0 +1,116 @@
+<div class="container">
+  <h2>Student Registration Form</h2>
+
+  <form #registrationForm="ngForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Name -->
+    <label>Full Name:</label>
+    <input type="text" 
+           name="studentName" 
+           [(ngModel)]="student.studentName" 
+           required 
+           pattern="^[A-Za-z ]{3,30}$"
+           #studentName="ngModel">
+    <div *ngIf="studentName.invalid && (studentName.dirty || studentName.touched)" class="error">
+      <div *ngIf="studentName.errors?.['required']">Name is required.</div>
+      <div *ngIf="studentName.errors?.['pattern']">3–30 alphabets only.</div>
+    </div>
+
+    <!-- Mobile -->
+    <label>Mobile Number:</label>
+    <input type="text" 
+           name="studentMobileNumber" 
+           [(ngModel)]="student.studentMobileNumber" 
+           required 
+           pattern="^[6-9][0-9]{9}$"
+           #studentMobileNumber="ngModel">
+    <div *ngIf="studentMobileNumber.invalid && (studentMobileNumber.dirty || studentMobileNumber.touched)" class="error">
+      <div *ngIf="studentMobileNumber.errors?.['required']">Mobile number is required.</div>
+      <div *ngIf="studentMobileNumber.errors?.['pattern']">Enter valid 10-digit Indian mobile number.</div>
+    </div>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="email" 
+           name="studentEmailId" 
+           [(ngModel)]="student.studentEmailId" 
+           required
+           pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|in|org)$"
+           #studentEmailId="ngModel">
+    <div *ngIf="studentEmailId.invalid && (studentEmailId.dirty || studentEmailId.touched)" class="error">
+      <div *ngIf="studentEmailId.errors?.['required']">Email is required.</div>
+      <div *ngIf="studentEmailId.errors?.['pattern']">Enter a valid email (must include {{at}} and .com/.in/.org).</div>
+    </div>
+
+    <!-- Qualification -->
+    <label>Highest Qualification:</label>
+    <input type="text" 
+           name="highestQualification" 
+           [(ngModel)]="student.highestQualification" 
+           required
+           #highestQualification="ngModel">
+    <div *ngIf="highestQualification.invalid && (highestQualification.dirty || highestQualification.touched)" class="error">
+      <div *ngIf="highestQualification.errors?.['required']">Qualification is required.</div>
+    </div>
+
+    <!-- Passing Year -->
+    <label>Passing Year:</label>
+    <input type="number" 
+           name="passingYear" 
+           [(ngModel)]="student.passingYear" 
+           required 
+           min="1990" max="2099"
+           #passingYear="ngModel">
+    <div *ngIf="passingYear.invalid && (passingYear.dirty || passingYear.touched)" class="error">
+      <div *ngIf="passingYear.errors?.['required']">Passing year is required.</div>
+      <div *ngIf="passingYear.errors?.['min'] || passingYear.errors?.['max']">Enter a valid year.</div>
+    </div>
+
+    <!-- Gender -->
+    <label>Gender:</label>
+    <select name="gender" [(ngModel)]="student.gender" required #gender="ngModel">
+      <option value="" disabled selected>Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="error">
+      <div *ngIf="gender.errors?.['required']">Gender is required.</div>
+    </div>
+
+    <!-- DOB -->
+    <label>Date of Birth:</label>
+    <input type="date" 
+           name="dateOfBirth" 
+           [(ngModel)]="student.dateOfBirth" 
+           required
+           #dateOfBirth="ngModel">
+    <div *ngIf="dateOfBirth.invalid && (dateOfBirth.dirty || dateOfBirth.touched)" class="error">
+      <div *ngIf="dateOfBirth.errors?.['required']">Date of Birth is required.</div>
+    </div>
+
+    <!-- Address -->
+    <h3>Address</h3>
+    <label>City:</label>
+    <input type="text" name="city" [(ngModel)]="student.studentAddress.city" required #city="ngModel">
+    <div *ngIf="city.invalid && (city.dirty || city.touched)" class="error">City is required.</div>
+
+    <label>State:</label>
+    <input type="text" name="state" [(ngModel)]="student.studentAddress.state" required #state="ngModel">
+    <div *ngIf="state.invalid && (state.dirty || state.touched)" class="error">State is required.</div>
+
+    <label>Pincode:</label>
+    <input type="text" name="pinCode" [(ngModel)]="student.studentAddress.pinCode" required pattern="^[0-9]{6}$" #pinCode="ngModel">
+    <div *ngIf="pinCode.invalid && (pinCode.dirty || pinCode.touched)" class="error">
+      <div *ngIf="pinCode.errors?.['required']">PinCode is required.</div>
+      <div *ngIf="pinCode.errors?.['pattern']">Enter valid 6-digit PinCode.</div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" [disabled]="registrationForm.invalid || isSubmitting">
+      {{ isSubmitting ? 'Submitting...' : 'Register' }}
+    </button>
+
+    <div *ngIf="isSubmitting" class="loader"></div>
+  </form>
+</div>
