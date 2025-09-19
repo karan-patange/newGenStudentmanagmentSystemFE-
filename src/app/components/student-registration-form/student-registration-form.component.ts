@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { StudentRegistrationService } from 'src/app/services/student-registration.service';
 
 @Component({
@@ -27,7 +28,7 @@ at: any="@";
 
   constructor(private studentService: StudentRegistrationService) {}
 
-  onSubmit() {
+  onSubmit(form : NgForm) {
     if (!this.isSubmitting) {
       this.isSubmitting = true;
 
@@ -35,6 +36,13 @@ at: any="@";
         next: () => {
           alert('Student Registered Successfully!');
           this.isSubmitting = false;
+          console.log(this.student);
+          this.resetForm();
+                        form.resetForm();
+                        
+                        
+
+          
         },
         error: () => {
           alert('Error while registering student.');
@@ -42,5 +50,29 @@ at: any="@";
         }
       });
     }
+  }
+
+  resetForm() {
+ this.student  = {
+    studentName: '',
+    studentMobileNumber: '',
+    studentEmailId: '',
+    highestQualification: '',
+    passingYear: '',
+    gender: '',
+    dateOfBirth: '',
+    studentAddress: {
+      city: '',
+      state: '',
+      pinCode: ''
+    }
+  };
+
+
+
+
+
+
+
   }
 }

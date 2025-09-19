@@ -18,7 +18,12 @@ export class EnquiryFormComponent {
     courseMode: '',
     address: ''
   };
+
+
 at: any = "@";
+
+
+
 
   constructor(private enquiryService: EnquiryService) {}
 isSubmitting = false;

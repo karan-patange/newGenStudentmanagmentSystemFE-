@@ -16,4 +16,14 @@ export class EnquiryService {
   submitEnquiry(enquiry: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/newEnquiry`, enquiry);
   }
+
+
+    // Method to submit new enquiry
+  submitEnquiry2(enquiry: any): Observable<any> {
+    return this.http.post(`http://localhost:9292/enquiry/newEnquiry`, enquiry);
+  }
+
+
+
+
 }
