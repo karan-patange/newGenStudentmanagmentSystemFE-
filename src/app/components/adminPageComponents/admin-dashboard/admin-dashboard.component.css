@@ -1,0 +1,154 @@
+/* Layout */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: #2c3e50;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  position: relative;
+}
+
+.header .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Admin Icon */
+.admin-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-icon img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #f39c12;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #34495e;
+  color: white;
+  padding: 20px 10px;
+}
+
+.sidebar .nav-link {
+  padding: 12px 18px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar .nav-link:hover {
+  background: #f39c12;
+  color: black;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #ecf0f1;
+  overflow-y: auto;
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;
+  color: white;
+  font-size: 16px;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 8px 0;
+}
+
+.btn-primary {
+  background: #2c3e50;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #f39c12;
+  color: black;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background: #e74c3c;
+  border: none;
+}
+
+.btn-success {
+  background: #27ae60;
+  border: none;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.table th {
+  background: #2c3e50;
+  color: white;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sidebar .nav-item {
+    display: inline-block;
+    margin: 8px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .btn,
+  input,
+  select,
+  textarea {
+    width: 100%;
+    max-width: 400px;
+    margin: 8px auto;
+    display: block;
+  }
+}

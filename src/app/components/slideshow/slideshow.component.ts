@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-slideshow',
@@ -7,32 +8,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlideshowComponent implements OnInit {
  images: string[] = [
+    'assets/images/slide-2.png',
     'assets/images/slideshow-1.png',
-    'assets/images/slide-2.png'
+    
   ];
 
   currentIndex = 0;
-  interval: any;
+  autoPlaySub!: Subscription;
+  isPaused = false;
 
-  ngOnInit() {
-    this.startAutoSlide();
+  ngOnInit(): void {
+    this.startAutoPlay();
   }
 
-  startAutoSlide() {
-    this.interval = setInterval(() => {
-      this.nextSlide();
-    }, 5000); // 3 seconds
+  ngOnDestroy(): void {
+    this.stopAutoPlay();
   }
 
-  nextSlide() {
+  startAutoPlay() {
+    this.autoPlaySub = interval(3000).subscribe(() => {
+      if (!this.isPaused) {
+        this.next();
+      }
+    });
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlaySub) {
+      this.autoPlaySub.unsubscribe();
+    }
+  }
+
+  next() {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
   }
 
-  prevSlide() {
+  prev() {
     this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
   }
 
-  goToSlide(index: number) {
-    this.currentIndex = index;
+  pause() {
+    this.isPaused = true;
+  }
+
+  resume() {
+    this.isPaused = false;
   }
 }

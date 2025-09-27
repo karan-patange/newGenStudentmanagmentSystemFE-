@@ -53,6 +53,23 @@
       <div *ngIf="highestQualification.errors?.['required']">Qualification is required.</div>
     </div>
 
+    <!-- COURCES  -->
+
+    <label>Select Courses:</label>
+<select name="cources" 
+        [(ngModel)]="student.cources" 
+        multiple 
+        required
+        #cources="ngModel">
+  <option *ngFor="let course of availableCourses" [ngValue]="{courceName: course}">
+    {{course}}
+  </option>
+</select>
+
+<div *ngIf="cources.invalid && (cources.dirty || cources.touched)" class="error">
+  <div *ngIf="cources.errors?.['required']">At least one course is required.</div>
+</div>
+
     <!-- Passing Year -->
     <label>Passing Year:</label>
     <input type="number" 
@@ -114,3 +131,30 @@
     <div *ngIf="isSubmitting" class="loader"></div>
   </form>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

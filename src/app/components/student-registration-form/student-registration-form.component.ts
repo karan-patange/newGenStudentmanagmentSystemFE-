@@ -8,20 +8,27 @@ import { StudentRegistrationService } from 'src/app/services/student-registratio
   styleUrls: ['./student-registration-form.component.css']
 })
 export class StudentRegistrationFormComponent {
- student: any = {
-    studentName: '',
-    studentMobileNumber: '',
-    studentEmailId: '',
-    highestQualification: '',
-    passingYear: '',
-    gender: '',
-    dateOfBirth: '',
-    studentAddress: {
-      city: '',
-      state: '',
-      pinCode: ''
-    }
-  };
+student: any = {
+  studentName: '',
+  studentMobileNumber: '',
+  studentEmailId: '',
+  highestQualification: '',
+  passingYear: '',
+  gender: '',
+  dateOfBirth: '',
+  studentAddress: {
+    city: '',
+    state: '',
+    pinCode: ''
+  },
+  cources: []   // new field added
+};
+
+
+
+
+  availableCourses: string[] = ['Java', 'Python', '.Net', 'Spring Boot', 'Angular'];
+
 
   isSubmitting = false;
 at: any="@";

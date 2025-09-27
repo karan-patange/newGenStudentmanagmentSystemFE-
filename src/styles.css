@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+/* Apply watermark to entire app */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("assets/images/NEWGEN-Softech-Logo.png") center center;
+  background-size: 300px;   /* adjust size */
+  opacity: 0.05;            /* lighter = more transparent */
+  z-index: -1;              /* keep behind all content */
+  pointer-events: none;     /* watermark won't block clicks */
+}

@@ -1,1 +1,61 @@
-<p>home-page works!</p>
+<app-scrolling-text></app-scrolling-text>
+
+
+
+<div class="slideshow-container">
+  <app-slideshow></app-slideshow>
+
+  
+  <button class="slideshow-btn" (click)="showForm = true">
+    Enquiry
+  </button>
+</div>
+
+
+<div class="form-overlay" *ngIf="showForm">
+  <app-enquiry-form></app-enquiry-form>
+  <button class="close-btn" (click)="showForm = false">&times;</button>
+</div>
+
+
+
+
+<div class="container-fluid py-5">
+  <div class="row align-items-center">
+    <!-- Left Side (Single Image) -->
+    <div class="col-md-6 text-center">
+      <img src="assets/images/jobGuarantee.png" alt="Job Guarantee" class="img-fluid rounded shadow">
+    </div>
+
+    <!-- Right Side (Text Content) -->
+    <div class="col-md-6 px-4">
+      <h6 class="text-success fw-bold">Discover Our Journey</h6>
+      <h2 class="fw-bold mb-3">Shaping Tomorrow’s Tech Workforce</h2>
+      <p>
+        Committed to shaping tomorrow’s workforce, NewGen SoftTech is a leading IT
+        training institute in Pune since 2014. With over 11,000+ success stories,
+        we equip individuals with the skills for thriving careers in tech and
+        digital industries.
+      </p>
+      <p>
+        Our holistic approach includes personalized career guidance,
+        industry-aligned training, and dedicated recruitment support. Through
+        dynamic partnerships, we continuously update our curriculum to match
+        industry demands, ensuring your readiness for a rewarding career journey.
+      </p>
+      <p class="fw-bold">At NewGen SoftTech, it’s not just about training – it’s about guaranteed placements.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="carousel-container">
+  <div class="carousel-track" [style.transform]="transformStyle">
+    <div class="carousel-item" *ngFor="let logo of logos">
+      <img [src]="logo" alt="logo">
+    </div>
+  </div>
+</div>

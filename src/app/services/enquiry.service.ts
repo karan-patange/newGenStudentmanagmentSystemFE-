@@ -12,7 +12,7 @@ export class EnquiryService {
 
   constructor(private http: HttpClient) { }
 
-  // Method to submit new enquiry
+
   submitEnquiry(enquiry: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/newEnquiry`, enquiry);
   }

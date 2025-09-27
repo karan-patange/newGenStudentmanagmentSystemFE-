@@ -1,0 +1,78 @@
+/* about.component.css */
+.about-container {
+  font-family: 'Arial', sans-serif;
+}
+
+.header-section {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-bottom: 5px solid #00b140;
+}
+
+.header-text h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vision-column {
+  transition: transform 0.3s ease;
+}
+
+.vision-column:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.why-section {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+}
+
+.quality-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quality-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section {
+  background: linear-gradient(135deg, #00b140, #007b2f);
+  border-top: 5px solid #ffffff;
+  border-bottom: 5px solid #ffffff;
+}
+
+.stat-item {
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: scale(1.1);
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, #00b140, #007b2f);
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 1s;
+}
+
+.animate__animated.animate__zoomIn {
+  --animate-duration: 1.5s;
+}
+
+.animate__animated.animate__pulse {
+  --animate-duration: 2s;
+  animation-iteration-count: 2;
+}
+
+.animate__animated.animate__tada {
+  --animate-duration: 1.5s;
+}
+
+.animate__animated.animate__bounceIn {
+  --animate-duration: 1.5s;
+}

@@ -10,7 +10,15 @@ import { EnquiryFormComponent } from './components/enquiry-form/enquiry-form.com
 import { StudentRegistrationFormComponent } from './components/student-registration-form/student-registration-form.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
-
+import { TestingComponent } from './components/testing/testing.component';
+import { StudentsComponent } from './components/adminPageComponents/students/students.component';
+import { AdminDashboardComponent } from './components/adminPageComponents/admin-dashboard/admin-dashboard.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { SendEmailComponent } from './components/adminPageComponents/send-email/send-email.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { ScrollingTextComponent } from './components/scrolling-text/scrolling-text.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +27,25 @@ import { SlideshowComponent } from './components/slideshow/slideshow.component';
     EnquiryFormComponent,
     StudentRegistrationFormComponent,
     HomePageComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    TestingComponent,
+    StudentsComponent,
+    AdminDashboardComponent,
+    AboutUsComponent,
+    ScrollingTextComponent,
+    SendEmailComponent
+    
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

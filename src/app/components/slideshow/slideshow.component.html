@@ -1,17 +1,16 @@
-<div class="slideshow-container">
-  <div class="mySlides fade" *ngFor="let img of images; let i = index" 
-       [class.active]="i === currentIndex">
-    <img [src]="img" alt="Slide {{ i+1 }}">
-  </div>
+<div class="slideshow-container"
+     (mouseenter)="pause()"
+     (mouseleave)="resume()">
 
-  <!-- Navigation buttons -->
-  <a class="prev" (click)="prevSlide()">&#10094;</a>
-  <a class="next" (click)="nextSlide()">&#10095;</a>
-</div>
+  <img [src]="images[currentIndex]" class="slide-image" alt="Slideshow Image" />
 
-<!-- Dots for slide indicator -->
-<div class="dots">
-  <span *ngFor="let img of images; let i = index" 
-        [class.active]="i === currentIndex" 
-        (click)="goToSlide(i)"></span>
+  <!-- Left Button -->
+  <button mat-mini-fab color="primary" class="nav-btn left" (click)="prev()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <!-- Right Button -->
+  <button mat-mini-fab color="primary" class="nav-btn right" (click)="next()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
 </div>

@@ -1,0 +1,78 @@
+/* strip */
+.scroll-strip {
+  padding: 0 12px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(90deg, #1976d2, #2196f3); /* modern gradient */
+  color: white;
+}
+
+/* container */
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+/* scrolling text */
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(-100%);
+  animation: moveLeftToRight 15s linear infinite;
+  will-change: transform;
+  padding-left: 2rem;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* pause on hover */
+.scroll-container:hover .scroll-text {
+  animation-play-state: paused;
+}
+
+/* move from left → right */
+@keyframes moveLeftToRight {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* links */
+.link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.link:hover {
+  color: #ffeb3b; /* highlight on hover */
+  text-shadow: 0 0 8px #ffeb3b;
+}
+
+.sep {
+  margin: 0 8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 🔥 modern glow pulse */
+.pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #4fc3f7, 0 0 20px #2196f3;
+  }
+  50% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #90caf9, 0 0 40px #42a5f5;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #4fc3f7, 0 0 20px #2196f3;
+  }
+}

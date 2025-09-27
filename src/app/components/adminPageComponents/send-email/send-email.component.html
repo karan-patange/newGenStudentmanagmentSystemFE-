@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2>Send Email</h2>
+
+  <!-- Subject -->
+  <div class="form-group mb-3">
+    <label>Subject</label>
+    <input type="text" [(ngModel)]="subject" class="form-control" placeholder="Enter subject">
+  </div>
+
+  <!-- Body -->
+  <div class="form-group mb-3">
+    <label>Body</label>
+    <textarea [(ngModel)]="body" class="form-control" rows="5" placeholder="Enter email body"></textarea>
+  </div>
+
+  <!-- Radio buttons -->
+  <div class="form-group mb-3">
+    <label>Send To:</label><br>
+    <input type="radio" [(ngModel)]="selectedApi" value="girls"> Girls <br>
+    <input type="radio" [(ngModel)]="selectedApi" value="all"> All Students <br>
+    <input type="radio" [(ngModel)]="selectedApi" value="fees90"> Students with >= 90% Fees Paid
+  </div>
+
+  <!-- Submit button -->
+  <button class="btn btn-primary" (click)="sendEmail()">Send Email</button>
+
+  <!-- Response -->
+  <div *ngIf="message" class="alert alert-info mt-3">
+    {{ message }}
+  </div>
+</div>
