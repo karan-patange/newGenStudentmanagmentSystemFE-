@@ -19,6 +19,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ScrollingTextComponent } from './components/scrolling-text/scrolling-text.component';
+
+
+
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoursesComponent } from './courses/courses.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +44,8 @@ import { ScrollingTextComponent } from './components/scrolling-text/scrolling-te
     AdminDashboardComponent,
     AboutUsComponent,
     ScrollingTextComponent,
-    SendEmailComponent
+    SendEmailComponent,
+    CoursesComponent
     
     
     
@@ -45,7 +57,15 @@ import { ScrollingTextComponent } from './components/scrolling-text/scrolling-te
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    BrowserAnimationsModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

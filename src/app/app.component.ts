@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'studentmanagmentSystem';
+
+
+
+   courseImages: string[] = [
+    // '/assets/courseCards/businessAnalysist.png',
+   '/assets/courseCards/mernStack.jpeg',
+    '/assets/courseCards/dataAnalysis.jpg',
+    // 'assets/images/angular.png'
+  ];
 }

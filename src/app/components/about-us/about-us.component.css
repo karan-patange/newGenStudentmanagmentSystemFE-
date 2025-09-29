@@ -1,0 +1,86 @@
+/* Layout overall */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  background: #003366;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.header .admin-icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Main (Sidebar + Content) */
+.main {
+  flex: 1;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #f4f6f9;
+  border-right: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 5px 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active-link {
+  background: #003366;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+/* Footer */
+.footer {
+  background: #003366;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}

@@ -1,9 +1,29 @@
 
-<!-- <app-header></app-header> -->
+<app-header></app-header>
 
 
  <!-- <router-outlet></router-outlet> -->
-<app-student-registration-form></app-student-registration-form>
+<!-- <app-student-registration-form></app-student-registration-form>
+  -->
+
+  <!-- <app-courses></app-courses>-->
+
+
+
+  <div style="display: flex; flex-wrap: wrap;">
+  <app-courses
+    *ngFor="let img of courseImages" 
+    [imageUrl]="img">
+  </app-courses>
+
+ 
+</div>
+
+
+
+
+
+<!-- <app-admin-dashboard></app-admin-dashboard> -->
 
 
 <!-- <app-send-email></app-send-email> -->

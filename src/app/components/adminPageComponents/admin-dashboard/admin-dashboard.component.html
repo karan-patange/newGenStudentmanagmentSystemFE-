@@ -1,30 +1,39 @@
-<div class="layout d-flex flex-column min-vh-100">
+<div class="layout">
 
+  <header class="header">
+    <h1 class="title">NEWGEN SOFTECH INSTITUTE</h1>
+    <div class="admin-icon">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Admin" />
+    </div>
+  </header>
 
-  <!-- Main Content -->
-  <div class="main d-flex flex-grow-1">
-    <!-- Sidebar -->
-    <aside class="sidebar bg-secondary text-white p-3">
-      <ul class="nav flex-column">
-        <li class="nav-item"><a class="nav-link text-white" routerLink="home">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="students">Students</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="fees">Fees Deposit</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="enquiries">Enquiries</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="courses">Courses</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="visuals">Visuals</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="faculties">Faculties</a></li>
-        <li class="nav-item"><a class="nav-link text-white" routerLink="placements">Placements</a></li>
+ 
+  <div class="main">
+    
+    <aside class="sidebar">
+      <ul>
+        <li><a routerLink="ho" routerLinkActive="active-link">Home</a></li>
+        <li><a routerLink="students" routerLinkActive="active-link">Students</a></li>
+        <li><a routerLink="fees" routerLinkActive="active-link">Fees Deposit</a></li>
+        <li><a routerLink="Email" routerLinkActive="active-link">Email</a></li>
+        <li><a routerLink="courses" routerLinkActive="active-link">Courses</a></li>
+        <li><a routerLink="visuals" routerLinkActive="active-link">Visuals</a></li>
+        <li><a routerLink="faculties" routerLinkActive="active-link">Faculties</a></li>
+        <li><a routerLink="placements" routerLinkActive="active-link">Placements</a></li>
       </ul>
     </aside>
 
-    <!-- Dynamic Content -->
-    <main class="content flex-grow-1 p-4 bg-light">
+    
+    <div class="content">
+      
       <router-outlet></router-outlet>
-    </main>
+    </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="footer bg-dark text-white text-center p-3">
-    <p class="m-0">© 2025 My Institute | All Rights Reserved</p>
+  
+  <footer class="footer">
+    <p>© 2025 My Institute | All Rights Reserved</p>
   </footer>
-</div>
+</div> 
+ 
+

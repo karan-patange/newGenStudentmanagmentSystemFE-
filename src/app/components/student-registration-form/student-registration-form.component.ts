@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
+
 import { StudentRegistrationService } from 'src/app/services/student-registration.service';
 
 @Component({
   selector: 'app-student-registration-form',
   templateUrl: './student-registration-form.component.html',
-  styleUrls: ['./student-registration-form.component.css']
+  styleUrls: ['./student-registration-form.component.css'],
+
+  
 })
 export class StudentRegistrationFormComponent {
 student: any = {
@@ -25,9 +28,10 @@ student: any = {
 };
 
 
-
-
-  availableCourses: string[] = ['Java', 'Python', '.Net', 'Spring Boot', 'Angular'];
+  availableCourses: string[] = [
+    'Java', 'Core Java', 'Spring Boot', 'Python', 'NodeJS', 'Angular',
+    'HTML', 'CSS', 'C++', 'Data Analyst', 'Data Science'
+  ];
 
 
   isSubmitting = false;
@@ -82,4 +86,7 @@ at: any="@";
 
 
   }
+
+
+
 }

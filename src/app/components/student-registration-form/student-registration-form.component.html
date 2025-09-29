@@ -1,3 +1,8 @@
+<div class="main-container">
+
+  <!-- Left: Registration Form -->
+  <div class="form-container">
+
 <div class="container">
   <h2>Student Registration Form</h2>
 
@@ -53,22 +58,30 @@
       <div *ngIf="highestQualification.errors?.['required']">Qualification is required.</div>
     </div>
 
-    <!-- COURCES  -->
 
-    <label>Select Courses:</label>
-<select name="cources" 
-        [(ngModel)]="student.cources" 
-        multiple 
-        required
-        #cources="ngModel">
-  <option *ngFor="let course of availableCourses" [ngValue]="{courceName: course}">
-    {{course}}
-  </option>
-</select>
 
-<div *ngIf="cources.invalid && (cources.dirty || cources.touched)" class="error">
-  <div *ngIf="cources.errors?.['required']">At least one course is required.</div>
-</div>
+
+
+
+
+
+
+
+
+
+  <label>Select Courses:</label>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-select placeholder="Select Courses" [(ngModel)]="student.courses" name="courses" multiple required>
+      <mat-option *ngFor="let course of availableCourses" [value]="course">{{ course }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <small *ngIf="(!student.courses?.length && registrationForm.submitted)" class="error-msg">
+    Please select at least one course.
+  </small>
+
+
+
+
 
     <!-- Passing Year -->
     <label>Passing Year:</label>
@@ -131,7 +144,19 @@
     <div *ngIf="isSubmitting" class="loader"></div>
   </form>
 </div>
+  </div>
 
+
+
+
+  <div class="courses-container">
+    <h2>Available Courses</h2>
+    <ul>
+      <li *ngFor="let course of availableCourses">{{ course }}</li>
+    </ul>
+  </div>
+
+</div>
 
 
 

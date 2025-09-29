@@ -5,6 +5,8 @@ import { StudentsComponent } from './components/adminPageComponents/students/stu
 import { SendEmailComponent } from './components/adminPageComponents/send-email/send-email.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { StudentRegistrationFormComponent } from './components/student-registration-form/student-registration-form.component';
+import { CoursesComponent } from './courses/courses.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },   // default route
@@ -13,9 +15,10 @@ const routes: Routes = [
   { path: 'sendEmail', component: SendEmailComponent }  ,
     { path: 'aboutUs', component: AboutUsComponent }  ,
      { path: 'home', component: HomePageComponent }  ,
+      { path: 'registrationForm', component: StudentRegistrationFormComponent }  ,
+      { path: 'courses', component: CoursesComponent }  ,
 
      
-    
 
 
 ];
